@@ -37,7 +37,7 @@ export function IconAfterSchool() {
 
 export function IconGallery() {
   return (
-    <svg viewBox="0 0 28 28" className="h-7 w-7 fill-none stroke-rose-pale stroke-[1.4] [stroke-linecap:round]">
+    <svg viewBox="0 0 28 28" className="h-7 w-7 fill-none stroke-rose-light stroke-[1.4] [stroke-linecap:round]">
       <rect x="3" y="3" width="22" height="22" rx="3" />
       <circle cx="10" cy="10" r="3" />
       <path d="m3 19 6-6 4 4 4-5 8 8" />

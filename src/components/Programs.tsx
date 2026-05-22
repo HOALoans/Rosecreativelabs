@@ -30,10 +30,10 @@ const programs = [
 
 export function Programs() {
   return (
-    <section id="programs" className="bg-white px-6 py-[52px] md:px-12">
+    <section id="programs" className="bg-white px-6 py-[52px] lg:px-12">
       <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <div className="text-[11px] font-medium tracking-[1.5px] text-muted uppercase">
+          <div className="font-sans text-[11px] font-medium tracking-[1.5px] text-muted uppercase">
             What we offer
           </div>
           <h2 className="mt-1.5 font-serif text-[22px] font-normal text-rose-deep">
@@ -42,7 +42,7 @@ export function Programs() {
         </div>
         <Link
           href="#programs"
-          className="text-[13px] text-rose-mid no-underline"
+          className="font-sans text-[13px] text-rose-mid no-underline transition-colors hover:text-rose-deep"
         >
           View all programs →
         </Link>
@@ -57,24 +57,24 @@ export function Programs() {
               className={`rounded-xl p-6 transition-[border-color] ${
                 program.featured
                   ? "border-2 border-rose-mid bg-white"
-                  : "border border-border bg-cream hover:border-rose-pale"
+                  : "border border-border bg-cream hover:border-rose-light"
               }`}
             >
               {program.featured && (
-                <span className="mb-3 inline-block rounded-full bg-rose-ghost px-2.5 py-0.5 text-[11px] font-medium text-rose-dark">
+                <span className="mb-3 inline-block rounded-full bg-rose-pale px-2.5 py-0.5 font-sans text-[11px] font-medium text-rose-mid">
                   Most booked
                 </span>
               )}
-              <div className="mb-3.5 flex h-10 w-10 items-center justify-center rounded-[10px] bg-rose-ghost">
+              <div className="mb-3.5 flex h-10 w-10 items-center justify-center rounded-[10px] bg-rose-pale">
                 <Icon />
               </div>
               <h3 className="mb-2 font-serif text-[15px] leading-[1.3] text-rose-deep">
                 {program.title}
               </h3>
-              <p className="mb-4 text-[13px] leading-[1.6] text-muted">
+              <p className="mb-4 font-sans text-[13px] leading-[1.6] text-muted">
                 {program.description}
               </p>
-              <span className="inline-block rounded-full bg-rose-ghost px-2.5 py-1 text-xs text-rose-dark">
+              <span className="inline-block rounded-full bg-rose-pale px-2.5 py-1 font-sans text-xs text-rose-mid">
                 {program.meta}
               </span>
             </article>
