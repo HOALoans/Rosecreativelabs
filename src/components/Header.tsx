@@ -3,6 +3,8 @@ import { LogoMark } from "./icons";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
+  { href: "/corporate-teambuilding", label: "Corporate teambuilding" },
+  { href: "/adult-continuing-education", label: "Adult continuing education" },
   { href: "/#about", label: "About" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/for-schools", label: "For schools" },

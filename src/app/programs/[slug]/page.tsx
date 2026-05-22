@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/SiteShell";
 import {
   getAllProgramSlugs,
+  getCategoryInquiryPath,
+  getCategoryPagePath,
   getProgramBySlug,
 } from "@/data/programs";
 
@@ -34,7 +36,9 @@ export default async function ProgramDetailPage({ params }: Props) {
     notFound();
   }
 
-  const inquiryHref = `/for-schools?program=${encodeURIComponent(program.title)}#inquiry`;
+  const inquiryBase = getCategoryInquiryPath(program.categoryId);
+  const inquiryHref = `${inquiryBase.replace("#inquiry", "")}?program=${encodeURIComponent(program.title)}#inquiry`;
+  const categoryHref = getCategoryPagePath(program.categoryId);
 
   return (
     <SiteShell>
@@ -45,7 +49,7 @@ export default async function ProgramDetailPage({ params }: Props) {
           </Link>
           <span className="mx-2">/</span>
           <Link
-            href={`/programs#${program.categoryId}`}
+            href={categoryHref}
             className="text-rose-mid no-underline hover:text-rose-deep"
           >
             {program.categoryName}
@@ -87,13 +91,23 @@ export default async function ProgramDetailPage({ params }: Props) {
           <p className="mt-3 font-sans text-sm leading-[1.7] text-muted">
             {program.pricingDetail}
           </p>
-          <p className="mt-4 border-t border-border pt-4 font-sans text-xs leading-relaxed text-muted">
-            Schools and organizations: see{" "}
-            <Link href="/for-schools" className="text-rose-mid no-underline hover:text-rose-deep">
-              per-session and residency packages
-            </Link>{" "}
-            for custom quotes and grant-funded options.
-          </p>
+          {program.categoryId === "corporate" || program.categoryId === "adult" ? (
+            <p className="mt-4 border-t border-border pt-4 font-sans text-xs leading-relaxed text-muted">
+              See{" "}
+              <Link href={categoryHref} className="text-rose-mid no-underline hover:text-rose-deep">
+                {program.categoryName}
+              </Link>{" "}
+              for full workshop details, logistics, and enrollment information.
+            </p>
+          ) : (
+            <p className="mt-4 border-t border-border pt-4 font-sans text-xs leading-relaxed text-muted">
+              Schools and organizations: see{" "}
+              <Link href="/for-schools" className="text-rose-mid no-underline hover:text-rose-deep">
+                per-session and residency packages
+              </Link>{" "}
+              for custom quotes and grant-funded options.
+            </p>
+          )}
           <Link
             href={inquiryHref}
             className="mt-6 block rounded-lg bg-rose-mid py-3 text-center font-sans text-sm font-medium text-cream no-underline transition-colors hover:bg-rose-dark"
@@ -105,7 +119,7 @@ export default async function ProgramDetailPage({ params }: Props) {
 
       <section className="bg-cream px-6 py-10 text-center lg:px-12">
         <Link
-          href={`/programs#${program.categoryId}`}
+          href={categoryHref}
           className="font-sans text-sm text-rose-mid no-underline hover:text-rose-deep"
         >
           ← More {program.categoryName} programs

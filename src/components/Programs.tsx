@@ -74,13 +74,13 @@ export function Programs() {
           9–12
         </Link>
         <Link
-          href="/programs#corporate"
+          href="/corporate-teambuilding"
           className="rounded-full bg-rose-pale px-3 py-1 font-sans text-xs text-rose-mid no-underline hover:bg-rose-light"
         >
           Corporate
         </Link>
         <Link
-          href="/programs#adult"
+          href="/adult-continuing-education"
           className="rounded-full bg-rose-pale px-3 py-1 font-sans text-xs text-rose-mid no-underline hover:bg-rose-light"
         >
           Adults

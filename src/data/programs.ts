@@ -280,6 +280,22 @@ export function getProgramBySlug(slug: string): ProgramWithCategory | undefined 
   return getAllPrograms().find((p) => p.slug === slug);
 }
 
+export function getCategoryById(id: string): ProgramCategory | undefined {
+  return programCatalog.find((cat) => cat.id === id);
+}
+
+export function getCategoryInquiryPath(categoryId: string): string {
+  if (categoryId === "corporate") return "/corporate-teambuilding#inquiry";
+  if (categoryId === "adult") return "/adult-continuing-education#inquiry";
+  return "/for-schools#inquiry";
+}
+
+export function getCategoryPagePath(categoryId: string): string {
+  if (categoryId === "corporate") return "/corporate-teambuilding";
+  if (categoryId === "adult") return "/adult-continuing-education";
+  return `/programs#${categoryId}`;
+}
+
 export function getAllProgramSlugs(): string[] {
   return getAllPrograms().map((p) => p.slug);
 }

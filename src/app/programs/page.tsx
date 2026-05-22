@@ -50,7 +50,15 @@ export default function ProgramsPage() {
         </ul>
       </nav>
 
-      {programCatalog.map((category, index) => (
+      {programCatalog.map((category, index) => {
+        const categoryPageHref =
+          category.id === "corporate"
+            ? "/corporate-teambuilding"
+            : category.id === "adult"
+              ? "/adult-continuing-education"
+              : null;
+
+        return (
         <section
           key={category.id}
           id={category.id}
@@ -64,6 +72,14 @@ export default function ProgramsPage() {
           <h2 className="mt-1.5 font-serif text-[26px] font-normal text-rose-deep">
             {category.name}
           </h2>
+          {categoryPageHref && (
+            <Link
+              href={categoryPageHref}
+              className="mt-2 inline-block font-sans text-sm font-medium text-rose-mid no-underline hover:text-rose-deep"
+            >
+              View full {category.name.toLowerCase()} page →
+            </Link>
+          )}
           <p className="mt-3 max-w-3xl font-sans text-sm leading-[1.7] text-rose-mid">
             <span className="font-medium text-rose-deep">Focus: </span>
             {category.focus}
@@ -74,7 +90,8 @@ export default function ProgramsPage() {
             ))}
           </div>
         </section>
-      ))}
+        );
+      })}
 
       <section className="border-t border-border bg-rose-deep px-6 py-12 text-center lg:px-12">
         <h2 className="font-serif text-[22px] font-normal text-rose-pale">
