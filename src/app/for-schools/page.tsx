@@ -58,7 +58,13 @@ const steps = [
   },
 ];
 
-export default function ForSchoolsPage() {
+type Props = {
+  searchParams: Promise<{ program?: string }>;
+};
+
+export default async function ForSchoolsPage({ searchParams }: Props) {
+  const { program: preselectedProgram } = await searchParams;
+
   return (
     <SiteShell>
       <PageHero
@@ -141,7 +147,7 @@ export default function ForSchoolsPage() {
             Tell us about your organization and we&apos;ll follow up with a custom
             proposal within two business days.
           </p>
-          <InquiryForm />
+          <InquiryForm defaultProgram={preselectedProgram} />
         </div>
       </section>
     </SiteShell>

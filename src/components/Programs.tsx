@@ -13,8 +13,8 @@ export function Programs() {
             Signature programs
           </h2>
           <p className="mt-2 max-w-lg font-sans text-sm text-muted">
-            Five pathways from K–5 through adult education — browse the full
-            catalog of 15 programs.
+            Five pathways from K–5 through adult education — browse all 15
+            programs with full pricing.
           </p>
         </div>
         <Link
@@ -28,8 +28,8 @@ export function Programs() {
       <div className="grid gap-4 md:grid-cols-3">
         {signaturePrograms.map((program) => (
           <Link
-            key={program.title}
-            href={program.href}
+            key={program.slug}
+            href={`/programs/${program.slug}`}
             className={`block rounded-xl p-6 no-underline transition-[border-color,box-shadow] hover:shadow-md hover:shadow-rose-deep/5 ${
               program.featured
                 ? "border-2 border-rose-mid bg-white"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { programInquiryOptions } from "@/data/programs";
 
 const programOptions = [...programInquiryOptions, "Custom / not sure yet"];
@@ -71,8 +71,21 @@ function validateForm(data: FormData): FieldErrors {
   return errors;
 }
 
-export function InquiryForm() {
+export function InquiryForm({
+  defaultProgram,
+}: {
+  defaultProgram?: string;
+}) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
+
+  useEffect(() => {
+    if (
+      defaultProgram &&
+      programOptions.includes(defaultProgram)
+    ) {
+      setFormData((prev) => ({ ...prev, programInterest: defaultProgram }));
+    }
+  }, [defaultProgram]);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
