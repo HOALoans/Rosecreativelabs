@@ -1,6 +1,6 @@
 export function LogoMark() {
   return (
-    <svg viewBox="0 0 18 18" className="h-[18px] w-[18px] fill-none stroke-rose-ghost stroke-[1.8] [stroke-linecap:round]">
+    <svg viewBox="0 0 18 18" className="h-[18px] w-[18px] fill-none stroke-cream stroke-[1.8] [stroke-linecap:round]">
       <path d="M9 2C5 2 2 5 2 9s3 7 7 7 7-3 7-7-3-7-7-7" />
       <path d="M6 9q3-4 6 0q-3 4-6 0" />
     </svg>

@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --rose-deep: #4a1b0c;
-  --rose-dark: #712b13;
-  --rose-mid: #993c1d;
-  --rose-warm: #d85a30;
-  --rose-light: #f0997b;
-  --rose-pale: #f5c4b3;
-  --rose-ghost: #faece7;
-  --cream: #fbf7f4;
+  --rose-deep: #3d1a26;
+  --rose-mid: #7d3550;
+  --rose-warm: #b05070;
+  --rose-light: #e8c5d0;
+  --rose-pale: #f7edf0;
+  --cream: #faf6f0;
+  /* Derived for mockup parity */
+  --rose-dark: #5a2840;
+  --rose-ghost: var(--rose-pale);
   --ink: #1c1410;
   --muted: #6b5b52;
-  --border: rgba(74, 27, 12, 0.12);
+  --border: rgba(61, 26, 38, 0.12);
 }
 
 @theme inline {
   --color-rose-deep: var(--rose-deep);
-  --color-rose-dark: var(--rose-dark);
   --color-rose-mid: var(--rose-mid);
   --color-rose-warm: var(--rose-warm);
   --color-rose-light: var(--rose-light);
   --color-rose-pale: var(--rose-pale);
+  --color-rose-dark: var(--rose-dark);
   --color-rose-ghost: var(--rose-ghost);
   --color-cream: var(--cream);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-cormorant);
 }
 
 body {

@@ -11,7 +11,7 @@ const navLinks = [
 
 export function Header() {
   return (
-    <nav className="sticky top-0 z-[100] flex items-center justify-between border-b border-border bg-cream px-6 py-[18px] md:px-12">
+    <nav className="sticky top-0 z-[100] flex items-center justify-between border-b border-border bg-cream px-6 py-[18px] lg:px-12">
       <Link href="/" className="flex items-center gap-[11px] no-underline">
         <div className="flex h-[34px] w-[34px] items-center justify-center rounded-lg bg-rose-mid">
           <LogoMark />
@@ -26,7 +26,7 @@ export function Header() {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-[13.5px] text-muted no-underline transition-colors hover:text-rose-mid"
+              className="font-sans text-[13.5px] text-muted no-underline transition-colors hover:text-rose-mid"
             >
               {link.label}
             </Link>
@@ -36,7 +36,7 @@ export function Header() {
 
       <Link
         href="#contact"
-        className="rounded-[7px] bg-rose-mid px-5 py-[9px] text-[13px] font-medium text-rose-ghost no-underline transition-colors hover:bg-rose-dark"
+        className="rounded-[7px] bg-rose-mid px-5 py-[9px] font-sans text-[13px] font-medium text-cream no-underline transition-colors hover:bg-rose-dark"
       >
         Book a program
       </Link>
