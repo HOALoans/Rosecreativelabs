@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const pills = ["K–8 schools", "Nonprofits", "Community orgs"];
@@ -36,10 +37,15 @@ export function Hero() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-3.5 bg-rose-deep px-9 py-12">
-        <div className="mb-1 flex h-[88px] w-[88px] items-center justify-center rounded-full border-2 border-rose-warm">
-          <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-rose-mid font-serif text-[22px] font-normal text-cream">
-            MR
-          </div>
+        <div className="relative mb-1 h-[88px] w-[88px] overflow-hidden rounded-full border-2 border-rose-warm">
+          <Image
+            src="/madeline-portrait.jpg"
+            alt="Madeline Rose Kirschner"
+            fill
+            sizes="88px"
+            className="object-cover"
+            priority
+          />
         </div>
         <p className="text-center font-serif text-base text-rose-pale">
           Madeline Rose Kirschner
