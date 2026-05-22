@@ -16,7 +16,7 @@ export function CtaStrip() {
         </p>
       </div>
       <Link
-        href="mailto:hello@rosecreativelabs.com"
+        href="/for-schools#inquiry"
         className="shrink-0 rounded-lg bg-rose-warm px-7 py-3.5 font-sans text-sm font-medium whitespace-nowrap text-cream no-underline transition-colors hover:bg-rose-mid"
       >
         Get in touch →

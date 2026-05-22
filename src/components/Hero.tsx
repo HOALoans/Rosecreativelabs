@@ -21,7 +21,7 @@ export function Hero() {
         </p>
         <div className="animate-fade-up animate-fade-up-delay-4 flex flex-wrap items-center gap-3">
           <Link
-            href="#programs"
+            href="/programs"
             className="rounded-lg bg-rose-mid px-6 py-3 font-sans text-sm font-medium text-cream no-underline transition-colors hover:bg-rose-dark"
           >
             See our programs →

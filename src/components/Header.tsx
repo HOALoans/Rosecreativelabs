@@ -2,11 +2,11 @@ import Link from "next/link";
 import { LogoMark } from "./icons";
 
 const navLinks = [
-  { href: "#programs", label: "Programs" },
-  { href: "#about", label: "About" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#schools", label: "For schools" },
-  { href: "#contact", label: "Contact" },
+  { href: "/programs", label: "Programs" },
+  { href: "/#about", label: "About" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/for-schools", label: "For schools" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -35,7 +35,7 @@ export function Header() {
       </ul>
 
       <Link
-        href="#contact"
+        href="/for-schools#inquiry"
         className="rounded-[7px] bg-rose-mid px-5 py-[9px] font-sans text-[13px] font-medium text-cream no-underline transition-colors hover:bg-rose-dark"
       >
         Book a program

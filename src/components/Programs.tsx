@@ -41,7 +41,7 @@ export function Programs() {
           </h2>
         </div>
         <Link
-          href="#programs"
+          href="/programs"
           className="font-sans text-[13px] text-rose-mid no-underline transition-colors hover:text-rose-deep"
         >
           View all programs →
