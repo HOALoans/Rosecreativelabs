@@ -27,6 +27,17 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 - [Tailwind CSS](https://tailwindcss.com/) 4
 - TypeScript
 
+## Instagram gallery
+
+The homepage gallery pulls recent posts from [@madelinerose.arts](https://www.instagram.com/madelinerose.arts/) via the [Instagram Graph API](https://developers.facebook.com/docs/instagram-api). Without API credentials, the section shows placeholders and links to Instagram.
+
+1. Copy `.env.example` to `.env.local`
+2. Create a [Meta Developer](https://developers.facebook.com/) app with Instagram API access
+3. Connect a Business or Creator Instagram account to a Facebook Page
+4. Generate a long-lived token with `instagram_basic` (or Graph API media permissions)
+5. Set `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_USER_ID` in `.env.local`
+6. Restart the dev server
+
 ## Project structure
 
 ```

@@ -7,10 +7,12 @@ export function Footer() {
       </span>
       <div className="flex flex-wrap gap-5">
         <a
-          href="https://instagram.com/madelineslandscape"
+          href="https://www.instagram.com/madelinerose.arts/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-sans text-xs text-muted no-underline transition-colors hover:text-rose-mid"
         >
-          @madelineslandscape
+          @madelinerose.arts
         </a>
         <a
           href="#"

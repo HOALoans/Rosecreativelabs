@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { IconGallery } from "./icons";
+import { InstagramGallery } from "./InstagramGallery";
+import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE_URL } from "@/lib/instagram";
 
 export function Gallery() {
   return (
@@ -17,26 +18,16 @@ export function Gallery() {
           </h2>
         </div>
         <Link
-          href="#gallery"
+          href={INSTAGRAM_PROFILE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-sans text-[13px] text-rose-mid no-underline transition-colors hover:text-rose-deep"
         >
-          View full gallery →
+          {INSTAGRAM_HANDLE} →
         </Link>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-2.5 md:grid-cols-[2fr_1fr_1fr] md:grid-rows-[120px_120px]">
-        <div className="row-span-2 flex items-center justify-center rounded-[10px] border border-border bg-rose-pale md:col-span-1">
-          <IconGallery />
-        </div>
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div
-            key={i}
-            className="flex h-[120px] items-center justify-center rounded-[10px] border border-border bg-rose-pale"
-          >
-            <IconGallery />
-          </div>
-        ))}
-      </div>
+      <InstagramGallery />
     </section>
   );
 }
