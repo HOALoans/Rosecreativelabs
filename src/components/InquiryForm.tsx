@@ -1,16 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { programInquiryOptions } from "@/data/programs";
 
-const programOptions = [
-  "Art Foundations Residency",
-  "Artists Who Changed the World",
-  "Creative Expression After-School",
-  "Color & Creativity Workshop",
-  "Corporate team building",
-  "Adult continuing education",
-  "Custom / not sure yet",
-];
+const programOptions = [...programInquiryOptions, "Custom / not sure yet"];
 
 const ageGroupOptions = [
   "Elementary (K–5)",
