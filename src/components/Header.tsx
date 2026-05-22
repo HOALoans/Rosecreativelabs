@@ -1,40 +1,45 @@
 import Link from "next/link";
+import { LogoMark } from "./icons";
 
 const navLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
+  { href: "#programs", label: "Programs" },
   { href: "#about", label: "About" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#schools", label: "For schools" },
   { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-rose/10 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
-        <Link
-          href="/"
-          className="font-serif text-xl font-semibold tracking-tight text-rose"
-        >
-          Rose Creative Labs
-        </Link>
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+    <nav className="sticky top-0 z-[100] flex items-center justify-between border-b border-border bg-cream px-6 py-[18px] md:px-12">
+      <Link href="/" className="flex items-center gap-[11px] no-underline">
+        <div className="flex h-[34px] w-[34px] items-center justify-center rounded-lg bg-rose-mid">
+          <LogoMark />
+        </div>
+        <span className="font-serif text-[17px] font-normal tracking-[0.2px] text-rose-deep">
+          Rose <em className="italic text-rose-mid">Creative Labs</em>
+        </span>
+      </Link>
+
+      <ul className="hidden list-none items-center gap-7 lg:flex">
+        {navLinks.map((link) => (
+          <li key={link.href}>
             <Link
-              key={link.href}
               href={link.href}
-              className="text-sm font-medium text-stone transition-colors hover:text-rose"
+              className="text-[13.5px] text-muted no-underline transition-colors hover:text-rose-mid"
             >
               {link.label}
             </Link>
-          ))}
-        </nav>
-        <Link
-          href="#contact"
-          className="rounded-full bg-rose px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-rose-light"
-        >
-          Get in touch
-        </Link>
-      </div>
-    </header>
+          </li>
+        ))}
+      </ul>
+
+      <Link
+        href="#contact"
+        className="rounded-[7px] bg-rose-mid px-5 py-[9px] text-[13px] font-medium text-rose-ghost no-underline transition-colors hover:bg-rose-dark"
+      >
+        Book a program
+      </Link>
+    </nav>
   );
 }

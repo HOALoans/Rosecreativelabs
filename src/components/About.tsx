@@ -1,29 +1,54 @@
+const credentials = [
+  "Master's degree in education (M.Ed.)",
+  "Standards-aligned curriculum design",
+  "Serving St. Louis city and county",
+  "Schools, nonprofits & community organizations",
+  "Grant-eligible programming available",
+  "Fully insured — contractor-ready",
+  "Single sessions to multi-week residencies",
+];
+
 export function About() {
   return (
-    <section id="about" className="border-t border-rose/10 bg-rose py-24 text-white lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-rose-muted">
-              About us
-            </p>
-            <h2 className="mt-2 font-serif text-4xl font-semibold tracking-tight lg:text-5xl">
-              A small studio with big ideas
-            </h2>
-          </div>
-          <div className="space-y-6 text-lg leading-relaxed text-rose-muted">
-            <p>
-              Rose Creative Labs is an independent creative studio focused on
-              helping founders and teams build brands that feel as good as they
-              look.
-            </p>
-            <p>
-              We believe great design starts with listening — understanding your
-              audience, your goals, and what makes you different. Then we craft
-              work that&apos;s elegant, intentional, and built to last.
-            </p>
-          </div>
-        </div>
+    <section id="about" className="grid border-t border-border lg:grid-cols-2">
+      <div className="border-border px-6 py-[52px] md:px-12 lg:border-r">
+        <h2 className="mb-[18px] font-serif text-[26px] leading-[1.25] font-normal text-rose-deep">
+          Education-first.
+          <br />
+          <em className="text-rose-mid">Art-always.</em>
+        </h2>
+        <p className="mb-3.5 text-sm leading-[1.8] text-muted">
+          Most art programs are taught by artists. Rose Creative Labs is
+          different — every program is built with the rigor of a formal
+          curriculum, because students deserve both creative freedom and
+          intentional learning.
+        </p>
+        <p className="mb-3.5 text-sm leading-[1.8] text-muted">
+          Madeline holds a master&apos;s degree in education and brings a
+          professional artistic practice into every session — connecting visual
+          art to real classroom outcomes, community engagement, and lasting
+          impact.
+        </p>
+        <p className="text-sm leading-[1.8] text-muted">
+          Her writing on public art and landscape integration reflects a deep
+          belief that art belongs in every community space — not just galleries.
+        </p>
+      </div>
+      <div className="bg-rose-ghost px-6 py-[52px] md:px-12">
+        <h3 className="mb-5 text-[11px] font-medium tracking-[1.5px] text-muted uppercase">
+          Credentials & capabilities
+        </h3>
+        <ul className="flex flex-col gap-3">
+          {credentials.map((cred) => (
+            <li
+              key={cred}
+              className="flex items-start gap-3 text-[13.5px] leading-[1.4] text-rose-dark"
+            >
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-mid" />
+              {cred}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

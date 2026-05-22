@@ -1,42 +1,65 @@
 import Link from "next/link";
 
+const pills = ["K–8 schools", "Nonprofits", "Community orgs"];
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <div
-        className="pointer-events-none absolute -top-24 right-0 h-[500px] w-[500px] rounded-full bg-rose-muted/60 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-cream blur-3xl"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <p className="mb-6 text-sm font-medium uppercase tracking-widest text-rose">
-          Creative Studio
+    <section className="grid min-h-[480px] lg:grid-cols-[1fr_420px]">
+      <div className="flex flex-col justify-center bg-rose-ghost px-8 py-12 md:px-14 md:py-16">
+        <p className="animate-fade-up animate-fade-up-delay-1 mb-[18px] text-[11px] font-medium tracking-[2px] text-rose-mid uppercase">
+          Art enrichment &nbsp;·&nbsp; St. Louis, MO
         </p>
-        <h1 className="max-w-4xl font-serif text-5xl leading-[1.1] font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-          Where ideas bloom into{" "}
-          <span className="text-rose">beautiful brands</span>
+        <h1 className="animate-fade-up animate-fade-up-delay-2 mb-5 max-w-[540px] font-serif text-[32px] leading-[1.18] font-normal text-rose-deep md:text-[42px]">
+          Art programs built for{" "}
+          <em className="text-rose-mid">real learning</em> — not just a fun
+          afternoon
         </h1>
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-stone">
-          We craft thoughtful brand identities, digital experiences, and visual
-          stories that help ambitious brands stand out and connect.
+        <p className="animate-fade-up animate-fade-up-delay-3 mb-8 max-w-[480px] text-[15px] leading-[1.75] text-rose-dark">
+          Rose Creative Labs brings structured, curriculum-aligned art
+          programs to schools, nonprofits, and community organizations across
+          St. Louis. Designed by a master&apos;s-level educator. Led by a working
+          artist.
         </p>
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="animate-fade-up animate-fade-up-delay-4 flex flex-wrap items-center gap-3">
           <Link
-            href="#work"
-            className="rounded-full bg-rose px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-rose-light"
+            href="#programs"
+            className="rounded-lg bg-rose-mid px-6 py-3 text-sm font-medium text-rose-ghost no-underline transition-colors hover:bg-rose-dark"
           >
-            View our work
+            See our programs →
           </Link>
           <Link
-            href="#contact"
-            className="rounded-full border border-rose/20 px-8 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-rose/40 hover:bg-rose-muted/50"
+            href="#about"
+            className="rounded-lg border-[1.5px] border-rose-pale px-[22px] py-[11px] text-sm text-rose-mid no-underline transition-colors hover:border-rose-mid"
           >
-            Start a project
+            Meet Madeline
           </Link>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-3.5 bg-rose-deep px-9 py-12">
+        <div className="mb-1 flex h-[88px] w-[88px] items-center justify-center rounded-full border-2 border-rose-warm">
+          <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-rose-mid font-serif text-[22px] font-normal text-rose-ghost">
+            MR
+          </div>
+        </div>
+        <p className="text-center font-serif text-base text-rose-pale">
+          Madeline Rose Kirschner
+        </p>
+        <p className="text-center text-xs leading-[1.6] text-rose-light">
+          M.Ed. &nbsp;·&nbsp; Artist &nbsp;·&nbsp; Teaching educator
+          <br />
+          St. Louis, Missouri
+        </p>
+        <div className="h-px w-10 bg-rose-dark" />
+        <div className="flex flex-wrap justify-center gap-1.5">
+          {pills.map((pill) => (
+            <span
+              key={pill}
+              className="rounded-full bg-rose-dark px-2.5 py-1 text-[11px] text-rose-pale"
+            >
+              {pill}
+            </span>
+          ))}
         </div>
       </div>
     </section>

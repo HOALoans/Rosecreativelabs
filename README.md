@@ -1,6 +1,6 @@
 # Rose Creative Labs
 
-Marketing site for [rosecreativelabs.com](https://rosecreativelabs.com), built with Next.js and Tailwind CSS.
+Art enrichment programs site for [rosecreativelabs.com](https://rosecreativelabs.com), built with Next.js and Tailwind CSS.
 
 ## Getting started
 

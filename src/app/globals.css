@@ -1,34 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf7f5;
-  --foreground: #1c1917;
-  --rose: #8b3a4a;
-  --rose-light: #c97b8a;
-  --rose-muted: #f5e6e8;
-  --cream: #f3ede8;
-  --stone: #78716c;
+  --rose-deep: #4a1b0c;
+  --rose-dark: #712b13;
+  --rose-mid: #993c1d;
+  --rose-warm: #d85a30;
+  --rose-light: #f0997b;
+  --rose-pale: #f5c4b3;
+  --rose-ghost: #faece7;
+  --cream: #fbf7f4;
+  --ink: #1c1410;
+  --muted: #6b5b52;
+  --border: rgba(74, 27, 12, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-rose-dark: var(--rose-dark);
+  --color-rose-mid: var(--rose-mid);
+  --color-rose-warm: var(--rose-warm);
   --color-rose-light: var(--rose-light);
-  --color-rose-muted: var(--rose-muted);
+  --color-rose-pale: var(--rose-pale);
+  --color-rose-ghost: var(--rose-ghost);
   --color-cream: var(--cream);
-  --color-stone: var(--stone);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
   --font-sans: var(--font-dm-sans);
-  --font-serif: var(--font-cormorant);
+  --font-serif: var(--font-playfair);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--cream);
+  color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-::selection {
-  background-color: var(--rose-muted);
-  color: var(--rose);
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease both;
+}
+
+.animate-fade-up-delay-1 {
+  animation-delay: 0.05s;
+}
+.animate-fade-up-delay-2 {
+  animation-delay: 0.15s;
+}
+.animate-fade-up-delay-3 {
+  animation-delay: 0.25s;
+}
+.animate-fade-up-delay-4 {
+  animation-delay: 0.35s;
 }

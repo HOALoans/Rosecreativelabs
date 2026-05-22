@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosewood Arts Initiative</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose-deep: #4A1B0C;
+  --rose-dark: #712B13;
+  --rose-mid: #993C1D;
+  --rose-warm: #D85A30;
+  --rose-light: #F0997B;
+  --rose-pale: #F5C4B3;
+  --rose-ghost: #FAECE7;
+  --cream: #FBF7F4;
+  --ink: #1C1410;
+  --muted: #6B5B52;
+  --border: rgba(74,27,12,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:var(--cream);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.logo-mark{width:34px;height:34px;background:var(--rose-mid);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.logo-mark svg{width:18px;height:18px;fill:none;stroke:var(--rose-ghost);stroke-width:1.8;stroke-linecap:round;}
+.logo-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--rose-deep);letter-spacing:0.2px;}
+.logo-name em{font-style:italic;color:var(--rose-mid);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--rose-mid);}
+.nav-cta{background:var(--rose-mid);color:var(--rose-ghost);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:9px 20px;border-radius:7px;border:none;cursor:pointer;transition:background .2s;}
+.nav-cta:hover{background:var(--rose-dark);}
+.hero{display:grid;grid-template-columns:1fr 420px;min-height:480px;}
+.hero-left{padding:64px 56px;background:var(--rose-ghost);display:flex;flex-direction:column;justify-content:center;}
+.eyebrow{font-size:11px;font-weight:500;color:var(--rose-mid);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;color:var(--rose-deep);line-height:1.18;margin-bottom:20px;max-width:540px;}
+.hero-title em{font-style:italic;color:var(--rose-mid);}
+.hero-body{font-size:15px;color:var(--rose-dark);line-height:1.75;max-width:480px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:12px;align-items:center;}
+.btn-fill{background:var(--rose-mid);color:var(--rose-ghost);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:12px 24px;border-radius:8px;border:none;cursor:pointer;transition:background .2s;}
+.btn-fill:hover{background:var(--rose-dark);}
+.btn-outline{background:transparent;color:var(--rose-mid);font-family:'DM Sans',sans-serif;font-size:14px;padding:11px 22px;border-radius:8px;border:1.5px solid var(--rose-pale);cursor:pointer;transition:border-color .2s;}
+.btn-outline:hover{border-color:var(--rose-mid);}
+.hero-right{background:var(--rose-deep);padding:48px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
+.avatar-ring{width:88px;height:88px;border-radius:50%;border:2px solid var(--rose-warm);display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
+.avatar-inner{width:76px;height:76px;border-radius:50%;background:var(--rose-mid);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--rose-ghost);font-weight:400;}
+.av-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-pale);text-align:center;}
+.av-title{font-size:12px;color:var(--rose-light);text-align:center;line-height:1.6;}
+.av-divider{width:40px;height:1px;background:var(--rose-dark);}
+.av-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.av-pill{background:var(--rose-dark);color:var(--rose-pale);font-size:11px;padding:4px 10px;border-radius:20px;}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);}
+.stat{padding:20px 24px;border-right:1px solid var(--border);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-number{font-family:'Playfair Display',serif;font-size:26px;color:var(--rose-mid);}
+.stat-label{font-size:12px;color:var(--muted);margin-top:3px;}
+.programs{padding:52px 48px;background:white;}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;}
+.section-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;}
+.section-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--rose-deep);font-weight:400;margin-top:6px;}
+.section-link{font-size:13px;color:var(--rose-mid);text-decoration:none;}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.program-card{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color .2s;}
+.program-card:hover{border-color:var(--rose-pale);}
+.program-card.featured{border:2px solid var(--rose-mid);background:white;}
+.featured-badge{display:inline-block;background:var(--rose-ghost);color:var(--rose-dark);font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:12px;font-weight:500;}
+.program-icon{width:40px;height:40px;border-radius:10px;background:var(--rose-ghost);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.program-icon svg{width:20px;height:20px;stroke:var(--rose-mid);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.program-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--rose-deep);margin-bottom:8px;line-height:1.3;}
+.program-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
+.program-meta{font-size:12px;background:var(--rose-ghost);color:var(--rose-dark);padding:4px 10px;border-radius:20px;display:inline-block;}
+.about{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+.about-left{padding:52px 48px;border-right:1px solid var(--border);}
+.about-right{padding:52px 48px;background:var(--rose-ghost);}
+.about-left h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:var(--rose-deep);line-height:1.25;margin-bottom:18px;}
+.about-left h2 em{font-style:italic;color:var(--rose-mid);}
+.about-left p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;}
+.about-right h3{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;}
+.cred-list{display:flex;flex-direction:column;gap:12px;}
+.cred{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--rose-dark);line-height:1.4;}
+.cred-dot{width:6px;height:6px;border-radius:50%;background:var(--rose-mid);margin-top:6px;flex-shrink:0;}
+.gallery{padding:48px 48px 52px;background:white;border-top:1px solid var(--border);}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:120px 120px;gap:10px;margin-top:24px;}
+.gallery-cell{background:var(--rose-ghost);border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.gallery-cell.tall{grid-row:span 2;}
+.gallery-cell svg{width:28px;height:28px;stroke:var(--rose-pale);fill:none;stroke-width:1.4;stroke-linecap:round;}
+.cta-strip{background:var(--rose-deep);padding:44px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px;}
+.cta-text h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--rose-pale);margin-bottom:6px;}
+.cta-text p{font-size:13px;color:var(--rose-light);line-height:1.6;}
+.cta-btn{background:var(--rose-warm);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:13px 28px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;}
+.cta-btn:hover{background:var(--rose-mid);}
+footer{padding:20px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--cream);}
+.foot-left{font-size:12px;color:var(--muted);}
+.foot-links{display:flex;gap:20px;}
+.foot-links a{font-size:12px;color:var(--muted);text-decoration:none;}
+.foot-links a:hover{color:var(--rose-mid);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .55s ease both;}
+.eyebrow{animation-delay:.05s}
+.hero-title{animation-delay:.15s}
+.hero-body{animation-delay:.25s}
+.hero-actions{animation-delay:.35s}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-mark">
+      <svg viewBox="0 0 18 18"><path d="M9 2C5 2 2 5 2 9s3 7 7 7 7-3 7-7-3-7-7-7"/><path d="M6 9q3-4 6 0q-3 4-6 0"/></svg>
+    </div>
+    <span class="logo-name">Rosewood <em>Arts Initiative</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Programs</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">For schools</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a program</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="eyebrow">Art enrichment &nbsp;·&nbsp; St. Louis, MO</p>
+    <h1 class="hero-title">Art programs built for <em>real learning</em> — not just a fun afternoon</h1>
+    <p class="hero-body">Rosewood Arts Initiative brings structured, curriculum-aligned art programs to schools, nonprofits, and community organizations across St. Louis. Designed by a master's-level educator. Led by a working artist.</p>
+    <div class="hero-actions">
+      <button class="btn-fill">See our programs →</button>
+      <button class="btn-outline">Meet Madeline</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="avatar-ring">
+      <div class="avatar-inner">MR</div>
+    </div>
+    <p class="av-name">Madeline Rose Kirschner</p>
+    <p class="av-title">M.Ed. &nbsp;·&nbsp; Artist &nbsp;·&nbsp; Teaching educator<br>St. Louis, Missouri</p>
+    <div class="av-divider"></div>
+    <div class="av-pills">
+      <span class="av-pill">K–8 schools</span>
+      <span class="av-pill">Nonprofits</span>
+      <span class="av-pill">Community orgs</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-number">3</div><div class="stat-label">Signature programs</div></div>
+  <div class="stat"><div class="stat-number">K–8</div><div class="stat-label">Age groups served</div></div>
+  <div class="stat"><div class="stat-number">M.Ed.</div><div class="stat-label">Education credential</div></div>
+  <div class="stat"><div class="stat-number">STL</div><div class="stat-label">City &amp; county service area</div></div>
+</div>
+
+<section class="programs">
+  <div class="section-header">
+    <div>
+      <div class="section-label">What we offer</div>
+      <div class="section-title">Signature programs</div>
+    </div>
+    <a class="section-link" href="#">View all programs →</a>
+  </div>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 12h20M12 2v20"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <div class="program-title">Art Foundations Residency</div>
+      <p class="program-desc">A 6-week in-school program exploring color, line, shape, and texture through hands-on projects tied to visual arts learning standards.</p>
+      <span class="program-meta">Ages 6–10 &nbsp;·&nbsp; 6 weeks</span>
+    </div>
+    <div class="program-card featured">
+      <div class="featured-badge">Most booked</div>
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M2 12h20"/></svg>
+      </div>
+      <div class="program-title">Artists Who Changed the World</div>
+      <p class="program-desc">A 4-session series connecting art history to social studies. Students explore influential artists and create works inspired by their legacy.</p>
+      <span class="program-meta">Ages 10–14 &nbsp;·&nbsp; 4 sessions</span>
+    </div>
+    <div class="program-card">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="program-title">Creative Expression After-School</div>
+      <p class="program-desc">A flexible enrichment block for after-school providers, public libraries, and community organizations. Adaptable in length and focus.</p>
+      <span class="program-meta">All ages &nbsp;·&nbsp; Flexible schedule</span>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-left">
+    <h2>Education-first.<br><em>Art-always.</em></h2>
+    <p>Most art programs are taught by artists. Rosewood Arts Initiative is different — every program is built with the rigor of a formal curriculum, because students deserve both creative freedom and intentional learning.</p>
+    <p>Madeline holds a master's degree in education and brings a professional artistic practice into every session — connecting visual art to real classroom outcomes, community engagement, and lasting impact.</p>
+    <p>Her writing on public art and landscape integration reflects a deep belief that art belongs in every community space — not just galleries.</p>
+  </div>
+  <div class="about-right">
+    <h3>Credentials &amp; capabilities</h3>
+    <div class="cred-list">
+      <div class="cred"><span class="cred-dot"></span>Master's degree in education (M.Ed.)</div>
+      <div class="cred"><span class="cred-dot"></span>Standards-aligned curriculum design</div>
+      <div class="cred"><span class="cred-dot"></span>Serving St. Louis city and county</div>
+      <div class="cred"><span class="cred-dot"></span>Schools, nonprofits &amp; community organizations</div>
+      <div class="cred"><span class="cred-dot"></span>Grant-eligible programming available</div>
+      <div class="cred"><span class="cred-dot"></span>Fully insured — contractor-ready</div>
+      <div class="cred"><span class="cred-dot"></span>Single sessions to multi-week residencies</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-header">
+    <div>
+      <div class="section-label">From the studio</div>
+      <div class="section-title">Program gallery</div>
+    </div>
+    <a class="section-link" href="#">View full gallery →</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-cell tall">
+      <svg viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="3"/><circle cx="10" cy="10" r="3"/><path d="m3 19 6-6 4 4 4-5 8 8"/></svg>
+    </div>
+    <div class="gallery-cell">
+      <svg viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="3"/><circle cx="10" cy="10" r="3"/><path d="m3 19 6-6 4 4 4-5 8 8"/></svg>
+    </div>
+    <div class="gallery-cell">
+      <svg viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="3"/><circle cx="10" cy="10" r="3"/><path d="m3 19 6-6 4 4 4-5 8 8"/></svg>
+    </div>
+    <div class="gallery-cell">
+      <svg viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="3"/><circle cx="10" cy="10" r="3"/><path d="m3 19 6-6 4 4 4-5 8 8"/></svg>
+    </div>
+    <div class="gallery-cell">
+      <svg viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="3"/><circle cx="10" cy="10" r="3"/><path d="m3 19 6-6 4 4 4-5 8 8"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="cta-text">
+    <h2>Ready to bring Rosewood into your school or organization?</h2>
+    <p>Single sessions, multi-week residencies, and custom programs available across St. Louis city and county.</p>
+  </div>
+  <button class="cta-btn">Get in touch →</button>
+</div>
+
+<footer>
+  <span class="foot-left">© 2025 Rosewood Arts Initiative &nbsp;·&nbsp; St. Louis, MO</span>
+  <div class="foot-links">
+    <a href="#">@madelineslandscape</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">hello@rosewoodarts.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
