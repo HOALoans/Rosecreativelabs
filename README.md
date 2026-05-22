@@ -27,6 +27,15 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 - [Tailwind CSS](https://tailwindcss.com/) 4
 - TypeScript
 
+## Inquiry form (Resend)
+
+The `/for-schools` inquiry form sends email via [Resend](https://resend.com).
+
+1. Add `RESEND_API_KEY` to `.env.local` (from the [Resend dashboard](https://resend.com/api-keys))
+2. Optionally set `CONTACT_EMAIL_TO` (defaults to a placeholder address)
+3. For testing, `RESEND_FROM_EMAIL` can stay as `Rose Creative Labs <onboarding@resend.dev>`
+4. Restart the dev server after changing env vars
+
 ## Instagram gallery
 
 The homepage gallery pulls recent posts from [@madelinerose.arts](https://www.instagram.com/madelinerose.arts/) via the [Instagram Graph API](https://developers.facebook.com/docs/instagram-api). Without API credentials, the section shows placeholders and links to Instagram.
