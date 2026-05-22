@@ -2,7 +2,7 @@ import { About } from "@/components/About";
 import { CtaStrip } from "@/components/CtaStrip";
 import { Footer } from "@/components/Footer";
 import { Gallery } from "@/components/Gallery";
-import { Header } from "@/components/Header";
+import { Header as Navbar } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Programs } from "@/components/Programs";
 import { StatsBar } from "@/components/StatsBar";
@@ -10,7 +10,7 @@ import { StatsBar } from "@/components/StatsBar";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Navbar />
       <main>
         <Hero />
         <StatsBar />
