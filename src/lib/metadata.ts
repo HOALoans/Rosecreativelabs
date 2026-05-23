@@ -58,7 +58,7 @@ export function buildPageMetadata({
       description,
       images: [
         {
-          url: "/about-art.jpg",
+          url: "/about-palette.jpg",
           width: 800,
           height: 1000,
           alt: "Paintbrush and palette — Rose Creative Labs art programs",
@@ -112,7 +112,7 @@ export const rootMetadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/about-art.jpg",
+        url: "/about-palette.jpg",
         width: 800,
         height: 1000,
         alt: "Paintbrush and palette — Rose Creative Labs art programs",

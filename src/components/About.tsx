@@ -9,7 +9,7 @@ export function About() {
         <div className="border-border bg-rose-pale px-6 py-[52px] lg:border-r lg:px-12">
           <div className="relative mx-auto aspect-[4/5] max-w-[320px] overflow-hidden rounded-xl border border-border">
             <Image
-              src="/about-art.jpg"
+              src="/about-palette.jpg"
               alt="Paintbrush and oil paints on an artist palette"
               fill
               sizes="(max-width: 1024px) 80vw, 320px"
