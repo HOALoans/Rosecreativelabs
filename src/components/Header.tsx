@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "./icons";
+import { RclLogo } from "./icons";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
@@ -15,9 +15,7 @@ export function Header() {
   return (
     <nav className="sticky top-0 z-[100] flex items-center justify-between border-b border-border bg-cream px-6 py-[18px] lg:px-12">
       <Link href="/" className="flex items-center gap-[11px] no-underline">
-        <div className="flex h-[34px] w-[34px] items-center justify-center rounded-lg bg-rose-mid">
-          <LogoMark />
-        </div>
+        <RclLogo />
         <span className="font-serif text-[17px] font-normal tracking-[0.2px] text-rose-deep">
           Rose <em className="italic text-rose-mid">Creative Labs</em>
         </span>

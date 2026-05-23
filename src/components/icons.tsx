@@ -1,10 +1,51 @@
-export function LogoMark() {
+type LogoProps = {
+  className?: string;
+};
+
+/** Rose Creative Labs monogram for header and branding. */
+export function RclLogo({ className = "h-[34px] w-[34px] shrink-0" }: LogoProps) {
   return (
-    <svg viewBox="0 0 18 18" className="h-[18px] w-[18px] fill-none stroke-cream stroke-[1.8] [stroke-linecap:round]">
-      <path d="M9 2C5 2 2 5 2 9s3 7 7 7 7-3 7-7-3-7-7-7" />
-      <path d="M6 9q3-4 6 0q-3 4-6 0" />
+    <svg
+      viewBox="0 0 34 34"
+      className={className}
+      role="img"
+      aria-label="Rose Creative Labs"
+    >
+      <rect width="34" height="34" rx="7" className="fill-rose-mid" />
+      <text
+        x="17"
+        y="16.5"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fill="#faf6f0"
+        style={{
+          fontFamily:
+            "var(--font-cormorant), 'Cormorant Garamond', 'Times New Roman', serif",
+          fontSize: "13px",
+          fontWeight: 600,
+        }}
+      >
+        <tspan letterSpacing="0.04em">R</tspan>
+        <tspan fontStyle="italic" letterSpacing="0.02em">
+          C
+        </tspan>
+        <tspan letterSpacing="0.04em">L</tspan>
+      </text>
+      <path
+        d="M9 24.5c2.8 1.6 5.6 2.4 8.5 2.4s5.7-.8 8.5-2.4"
+        fill="none"
+        stroke="#faf6f0"
+        strokeOpacity="0.45"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
     </svg>
   );
+}
+
+/** @deprecated Use RclLogo */
+export function LogoMark() {
+  return <RclLogo className="h-[18px] w-[18px]" />;
 }
 
 export function IconFoundations() {
