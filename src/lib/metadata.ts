@@ -58,10 +58,10 @@ export function buildPageMetadata({
       description,
       images: [
         {
-          url: "/about-artist-paint.jpg",
+          url: "/about-art.jpg",
           width: 800,
-          height: 533,
-          alt: "Artist paints at Rose Creative Labs, St. Louis",
+          height: 1000,
+          alt: "Paintbrush and palette — Rose Creative Labs art programs",
         },
       ],
     },
@@ -112,10 +112,10 @@ export const rootMetadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/about-artist-paint.jpg",
+        url: "/about-art.jpg",
         width: 800,
-        height: 533,
-        alt: "Artist paints at Rose Creative Labs, St. Louis",
+        height: 1000,
+        alt: "Paintbrush and palette — Rose Creative Labs art programs",
       },
     ],
   },
