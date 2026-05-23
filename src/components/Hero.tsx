@@ -39,11 +39,11 @@ export function Hero() {
       <div className="flex flex-col items-center justify-center gap-3.5 bg-rose-deep px-9 py-12">
         <div className="relative mb-1 h-[88px] w-[88px] overflow-hidden rounded-full border-2 border-rose-warm">
           <Image
-            src="/madeline-portrait.jpg"
-            alt="Madeline Rose Kirschner"
+            src="/about-palette.jpg"
+            alt="Paintbrush and oil paints on an artist palette"
             fill
             sizes="88px"
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
         </div>
