@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ProgramCatalogJsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ProgramCatalogCard } from "@/components/ProgramCatalogCard";
 import { SiteShell } from "@/components/SiteShell";
+import { buildPageMetadata } from "@/lib/metadata";
 import { programCatalog } from "@/data/programs";
 
-export const metadata: Metadata = {
-  title: "Programs | Rose Creative Labs",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Programs",
   description:
-    "Art programs for elementary, middle, and high school, corporate team building, and adult continuing education in St. Louis.",
-};
+    "Browse 15 art programs for elementary, middle, and high school students, corporate team building workshops, and adult continuing education in St. Louis — with pricing and materials included.",
+  path: "/programs",
+  keywords: [
+    "K-12 art program catalog",
+    "St. Louis school art residency",
+    "art class pricing Missouri",
+  ],
+});
 
 export default function ProgramsPage() {
   return (
     <SiteShell>
+      <ProgramCatalogJsonLd />
       <PageHero
         eyebrow="Program catalog"
         title={

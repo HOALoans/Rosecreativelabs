@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { SiteJsonLd } from "@/components/JsonLd";
+import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -15,11 +17,7 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500"],
 });
 
-export const metadata: Metadata = {
-  title: "Rose Creative Labs",
-  description:
-    "Structured, curriculum-aligned art enrichment programs for schools, nonprofits, and community organizations in St. Louis.",
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -28,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <SiteJsonLd />
+        {children}
+      </body>
     </html>
   );
 }

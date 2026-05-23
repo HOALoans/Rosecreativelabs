@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd, ProgramJsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { buildPageMetadata } from "@/lib/metadata";
 import {
   getAllProgramSlugs,
   getCategoryInquiryPath,
@@ -20,12 +22,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const program = getProgramBySlug(slug);
-  if (!program) return { title: "Program | Rose Creative Labs" };
+  if (!program) return { title: "Program" };
 
-  return {
-    title: `${program.title} | Rose Creative Labs`,
-    description: program.description.slice(0, 160),
-  };
+  return buildPageMetadata({
+    title: program.title,
+    description: `${program.description.slice(0, 155)}… ${program.ageRange}. ${program.pricing}.`,
+    path: `/programs/${slug}`,
+    keywords: [
+      program.categoryName,
+      program.ageRange,
+      `${program.title} St. Louis`,
+    ],
+    type: "article",
+  });
 }
 
 export default async function ProgramDetailPage({ params }: Props) {
@@ -38,10 +47,26 @@ export default async function ProgramDetailPage({ params }: Props) {
 
   const inquiryBase = getCategoryInquiryPath(program.categoryId);
   const inquiryHref = `${inquiryBase.replace("#inquiry", "")}?program=${encodeURIComponent(program.title)}#inquiry`;
+
   const categoryHref = getCategoryPagePath(program.categoryId);
 
   return (
     <SiteShell>
+      <ProgramJsonLd
+        title={program.title}
+        description={program.description}
+        slug={slug}
+        pricing={program.pricing}
+        duration={program.duration}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Programs", path: "/programs" },
+          { name: program.categoryName, path: categoryHref },
+          { name: program.title, path: `/programs/${slug}` },
+        ]}
+      />
       <article className="border-b border-border bg-rose-pale px-6 py-10 md:px-12 md:py-14">
         <nav className="mb-6 font-sans text-sm text-muted">
           <Link href="/programs" className="text-rose-mid no-underline hover:text-rose-deep">

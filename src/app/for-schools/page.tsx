@@ -3,12 +3,19 @@ import Link from "next/link";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { SiteShell } from "@/components/SiteShell";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "For Schools & Orgs | Rose Creative Labs",
+export const metadata: Metadata = buildPageMetadata({
+  title: "For Schools & Organizations",
   description:
-    "Book art enrichment programs for your school or organization. Per-session, residency, and grant-funded options in St. Louis.",
-};
+    "Book art enrichment for your school, district, library, or nonprofit in St. Louis. Per-session workshops, multi-week residencies, and grant-ready program proposals.",
+  path: "/for-schools",
+  keywords: [
+    "school art residency St. Louis",
+    "after school art program Missouri",
+    "grant funded art education",
+  ],
+});
 
 const packages = [
   {
