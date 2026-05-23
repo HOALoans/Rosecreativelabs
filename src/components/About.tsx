@@ -9,8 +9,8 @@ export function About() {
         <div className="border-border bg-rose-pale px-6 py-[52px] lg:border-r lg:px-12">
           <div className="relative mx-auto aspect-[4/5] max-w-[320px] overflow-hidden rounded-xl border border-border">
             <Image
-              src="/madeline-portrait.jpg"
-              alt="Madeline Rose Kirschner, artist and educator"
+              src="/about-artist-paint.jpg"
+              alt="Artist paints and brushes"
               fill
               sizes="(max-width: 1024px) 80vw, 320px"
               className="object-cover"
